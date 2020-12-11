@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import MenuBar from "./components/menuBar/index.js";
+import AboutPage from "./components/aboutPage/index.js";
+import EducationPage from "./components/educationPage/index.js";
+import ProjectPage from "./components/projectPage/index.js";
+import InterestPage from "./components/interestPage/index.js";
+import { useStyles } from "./styles.js";
 
 function App() {
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.container}>
+      <MenuBar />
+      <div className={classes.pageContainer}>
+        <AboutPage />
+        <EducationPage />
+        <ProjectPage />
+        <InterestPage />
+      </div>
     </div>
   );
 }
